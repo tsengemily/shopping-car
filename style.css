@@ -11,6 +11,7 @@ html,
 body {
   width: 100%;
   height: 100%;
+  font-weight: 400;
   font-family: "Noto Sans TC", "Nunito Sans", sans-serif;
 }
 
@@ -19,13 +20,594 @@ a {
   color: var(--black);
 }
 
-/*----------變數----------*/
+input {
+  cursor: pointer;
+}
+
 :root {
   --footer-bgc: #f6f7f8;
   --black: #2a2a2a;
-  --dark-gray: #808080;
+  --gray: #808080;
+  --dark-gray: #4a4a4a;
+  --light-gray: #afb1bd;
+  --light-light-gray: #f0f0f5;
+  --white: #ffffff;
+  --pink: #f67599;
   --logo-light: url(./logolight.png);
   --moon: url(./moon.png);
+}
+
+/*----------變數----------*/
+.w-25 {
+  width: 25%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-25 {
+  height: 25%;
+}
+
+.h-50 {
+  height: 50%;
+}
+
+.h-75 {
+  height: 75%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.mx-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.my-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.m-1 {
+  margin: 0.25rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.m-3 {
+  margin: 0.75rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.m-5 {
+  margin: 1.25rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.mr-5 {
+  margin-right: 1.25rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.m-6 {
+  margin: 1.5rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mr-6 {
+  margin-right: 1.5rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
+}
+
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.m-7 {
+  margin: 1.75rem;
+}
+
+.mt-7 {
+  margin-top: 1.75rem;
+}
+
+.mr-7 {
+  margin-right: 1.75rem;
+}
+
+.mb-7 {
+  margin-bottom: 1.75rem;
+}
+
+.ml-7 {
+  margin-left: 1.75rem;
+}
+
+.mx-7 {
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
+}
+
+.my-7 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.m-8 {
+  margin: 2rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mr-8 {
+  margin-right: 2rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.px-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
+}
+
+.pr-1 {
+  padding-right: 0.25rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
+.pr-3 {
+  padding-right: 0.75rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.pr-4 {
+  padding-right: 1rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
+.pr-5 {
+  padding-right: 1.25rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
+.pl-5 {
+  padding-left: 1.25rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+.pr-6 {
+  padding-right: 1.5rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.p-7 {
+  padding: 1.75rem;
+}
+
+.pt-7 {
+  padding-top: 1.75rem;
+}
+
+.pr-7 {
+  padding-right: 1.75rem;
+}
+
+.pb-7 {
+  padding-bottom: 1.75rem;
+}
+
+.pl-7 {
+  padding-left: 1.75rem;
+}
+
+.px-7 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
+.py-7 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
+}
+
+.pr-8 {
+  padding-right: 2rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
+.pl-8 {
+  padding-left: 2rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 /*----------繼承----------*/
@@ -37,6 +619,100 @@ header .container .nav .nav-item-right-part .mode-changer, header .container .na
   background-repeat: no-repeat;
 }
 
+main .container .form-container input,
+main .container .form-container select {
+  border: 1px solid var(--dark-gray);
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 12px;
+}
+main .container .form-container input:hover,
+main .container .form-container select:hover, main .container .form-container input:focus,
+main .container .form-container select:focus {
+  border-color: var(--black);
+}
+
+/*----------display----------*/
+.d-none {
+  display: none;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.align-content-start {
+  align-content: flex-start;
+}
+
+.align-content-end {
+  align-content: flex-end;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
 header .container {
   position: fixed;
   top: 0;
@@ -46,6 +722,7 @@ header .container {
   align-items: center;
   width: 100%;
   height: 56px;
+  background-color: var(--white);
 }
 header .container .navbar-brand {
   width: 135px;
@@ -59,6 +736,7 @@ header .container .navbar-toggle-label .control-icon {
   width: 24px;
   height: 24px;
   background-image: url(./sort.png);
+  cursor: pointer;
 }
 header .container #nav-control {
   position: absolute;
@@ -78,6 +756,7 @@ header .container .nav {
   position: absolute;
   top: 100%;
   width: 100%;
+  background-color: var(--white);
 }
 header .container .nav .nav-list {
   width: 90%;
@@ -117,6 +796,213 @@ header .container .nav .nav-item-right-part .shopping-car {
 }
 header .container .nav .nav-item-right-part .mode-changer {
   background-image: var(--moon);
+}
+
+main .container {
+  padding-top: 70px;
+  margin: 0 20px;
+}
+main .container .main-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 38px;
+}
+main .container .stepper-container {
+  margin: 24px 0;
+  height: 40px;
+  width: 100%;
+}
+main .container .stepper-container .stepper-content {
+  display: flex;
+}
+main .container .stepper-container .stepper-content .step {
+  position: relative;
+  flex: 1;
+  text-align: center;
+}
+main .container .stepper-container .stepper-content .step:nth-child(1) .circle::after {
+  content: "1";
+}
+main .container .stepper-container .stepper-content .step:nth-child(2) .circle::after {
+  content: "2";
+}
+main .container .stepper-container .stepper-content .step:nth-child(3) .circle::after {
+  content: "3";
+}
+main .container .stepper-container .stepper-content .step .circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--light-gray);
+  color: var(--light-gray);
+  font-family: "Nunito Sans";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px;
+}
+main .container .stepper-container .stepper-content .step:first-child .line {
+  right: -20%;
+  left: 40%;
+}
+main .container .stepper-container .stepper-content .step:nth-child(2) .line {
+  right: -60%;
+  left: 80%;
+}
+main .container .stepper-container .stepper-content .step .line {
+  display: block;
+  position: absolute;
+  top: 16px;
+  height: 2px;
+  background-color: var(--light-gray);
+}
+main .container .form-container h3 {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+}
+main .container .form-container .row {
+  margin-bottom: 24px;
+  width: 100%;
+}
+main .container .form-container .row > label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--gray);
+}
+main .container .form-container input,
+main .container .form-container select {
+  width: 100%;
+}
+main .container .form-container select {
+  -webkit-appearance: none;
+  background-color: transparent;
+}
+main .container .form-container .select-wrapper {
+  position: relative;
+  z-index: 0;
+}
+main .container .form-container .select-wrapper::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: 15px;
+  border-top: 5px solid var(--black);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  transform: translateY(-50%);
+}
+main .container .form-container .deliver {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "radio way fee" "radio time .";
+  border: 1px solid var(--light-light-gray);
+  border-radius: 4px;
+  margin-bottom: 24px;
+  padding: 7px 20px;
+}
+main .container .form-container .deliver:hover, main .container .form-container .deliver:focus {
+  border-color: var(--black);
+}
+main .container .form-container .deliver input {
+  grid-area: radio;
+  position: relative;
+  top: 25%;
+  left: 20px;
+  -webkit-appearance: none;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
+main .container .form-container .deliver input:checked {
+  box-shadow: inset 0 0 0 7px var(--black);
+}
+main .container .form-container .deliver .deliver-way {
+  grid-area: way;
+  font-size: 14px;
+  line-height: 30px;
+}
+main .container .form-container .deliver .deliver-time {
+  grid-area: time;
+  font-size: 12px;
+  line-height: 16px;
+}
+main .container .form-container .deliver .deliver-fee {
+  grid-area: fee;
+  position: relative;
+  top: 8px;
+  font-size: 12px;
+  line-height: 16px;
+}
+main .container .car-container {
+  border: 1px solid var(--light-light-gray);
+  border-radius: 8px;
+  padding: 16px;
+}
+main .container .car-container .car-item {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "img name" "img amount" "img price";
+  margin-bottom: 18px;
+}
+main .container .car-container .car-item img {
+  grid-area: img;
+}
+main .container .car-container .car-item .item-name {
+  grid-area: name;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+}
+main .container .car-container .car-item .item-amount {
+  grid-area: amount;
+  text-align: right;
+}
+main .container .car-container .car-item .item-amount .amount {
+  margin: 0 25px;
+}
+main .container .car-container .car-item .item-amount .minus,
+main .container .car-container .car-item .item-amount .plus {
+  display: inline-block;
+  height: 26px;
+  width: 26px;
+  font-size: 24px;
+  line-height: 22px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--light-light-gray);
+}
+main .container .car-container .car-item .item-price {
+  grid-area: price;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: right;
+}
+main .container .car-container .row {
+  border-top: 1px solid var(--light-light-gray);
+  padding: 16px;
+}
+main .container .control-panel {
+  margin-top: 32px;
+  padding: 24px 0 40px;
+  border-top: 1px solid var(--light-light-gray);
+}
+main .container .control-panel .btn {
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 40px;
+}
+main .container .control-panel .btn-primary {
+  color: var(--white);
+  background-color: var(--pink);
 }
 
 footer {
@@ -211,9 +1097,8 @@ footer .container .follow {
 footer .container .about a,
 footer .container .info a,
 footer .container .follow a {
-    color: var(--dark-gray);
+    color: var(--gray);
     font-size: 16px;
-    font-weight: 400;
   }
   footer .container .service {
     grid-area: service;

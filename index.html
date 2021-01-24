@@ -58,6 +58,174 @@
         </nav>
       </div>
     </header>
+    <main>
+      <div class="container">
+        <h2 class="main-title">結帳</h2>
+        <div class="stepper-container">
+          <div class="stepper-content">
+            <div class="step d-flex justify-content-start">
+              <div class="circle"></div>
+              <span class="line"></span>
+            </div>
+            <div class="step d-flex justify-content-center">
+              <div class="circle"></div>
+              <span class="line"></span>
+            </div>
+            <div class="step d-flex justify-content-end">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-container">
+          <form action="">
+            <div class="form-content">
+              <div class="part">
+                <h3>寄送地址</h3>
+                <div class="d-flex justify-content-between">
+                  <div class="row mr-8">
+                    <label for="">稱謂</label>
+                    <div class="select-wrapper">
+                      <select name="" id="">
+                        <option value="">先生</option>
+                        <option value="">小姐</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label for="">姓名</label>
+                    <input type="text" placeholder="請輸入姓名" />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <label for="">電話</label>
+                  <input type="text" placeholder="請輸入行動電話" />
+                </div>
+                <div class="row">
+                  <label for="">Email</label>
+                  <input type="text" placeholder="請輸入電子信箱" />
+                </div>
+                <div class="row">
+                  <label for="">縣市</label>
+                  <div class="select-wrapper">
+                    <select name="" id="">
+                      <option value="" disabled selected>請選擇縣市</option>
+                      <option value="">台北市</option>
+                      <option value="">新北市</option>
+                      <option value="">桃園市</option>
+                      <option value="">台中市</option>
+                      <option value="">台南市</option>
+                      <option value="">高雄市</option>
+                      <option value="">新竹縣</option>
+                      <option value="">苗栗縣</option>
+                      <option value="">彰化縣</option>
+                      <option value="">南投縣</option>
+                      <option value="">雲林縣</option>
+                      <option value="">嘉義縣</option>
+                      <option value="">屏東縣</option>
+                      <option value="">宜蘭縣</option>
+                      <option value="">花蓮縣</option>
+                      <option value="">台東縣</option>
+                      <option value="">澎湖縣</option>
+                      <option value="">金門縣</option>
+                      <option value="">連江縣</option>
+                      <option value="">基隆市</option>
+                      <option value="">新竹市</option>
+                      <option value="">嘉義市</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <label for="">地址</label>
+                  <input type="text" placeholder="請輸入地址" />
+                </div>
+              </div>
+              <div class="part">
+                <h3>運送方式</h3>
+                <div class="deliver">
+                  <input type="radio" name="delivery" />
+                  <label for="" class="deliver-way">標準運送</label>
+                  <label for="" class="deliver-time">約3~7個工作天</label>
+                  <label for="" class="deliver-fee">免費</label>
+                </div>
+                <div class="deliver">
+                  <input type="radio" name="delivery" />
+                  <label for="" class="deliver-way">
+                    <strong>DHL貨運</strong>
+                  </label>
+                  <label for="" class="deliver-time">48小時內送達</label>
+                  <label for="" class="deliver-fee">$500</label>
+                </div>
+              </div>
+              <div class="part">
+                <h3>付款資訊</h3>
+                <div class="row">
+                  <label for="">持卡人姓名</label>
+                  <input type="text" placeholder="John Doe" />
+                </div>
+                <div class="row">
+                  <label for="">卡號</label>
+                  <input type="text" placeholder="1111 2222 3333 4444" />
+                </div>
+                <div class="d-flex justify-content-between">
+                  <div class="row">
+                    <label for="">有效期限</label>
+                    <input type="text" placeholder="MM/YY" />
+                  </div>
+                  <div class="row ml-8">
+                    <label for="">CVC / CCV</label>
+                    <input type="text" placeholder="123" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="car-container">
+          <div class="car-content">
+            <div class="car-item">
+              <img src="./item1.png" alt="" />
+              <div class="item-name">破壞補丁修身牛仔褲</div>
+              <div class="item-amount">
+                <span class="minus">-</span>
+                <span class="amount">1</span>
+                <span class="plus">+</span>
+              </div>
+              <div class="item-price">
+                <strong>$3,999</strong>
+              </div>
+            </div>
+            <div class="car-item">
+              <img src="./item2.png" alt="" />
+              <div class="item-name">刷色直筒牛仔褲</div>
+              <div class="item-amount">
+                <span class="minus">-</span>
+                <span class="amount">1</span>
+                <span class="plus">+</span>
+              </div>
+              <div class="item-price">
+                <strong>$1,299</strong>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-between">
+              <p>運費</p>
+              <p>
+                <strong>免費</strong>
+              </p>
+            </div>
+            <div class="row d-flex justify-content-between">
+              <p>小計</p>
+              <p>
+                <strong>$5,298</strong>
+              </p>
+            </div>
+        </div>
+      </div>
+      <div id="btn-control" class="control-panel d-flex justify-content-between">
+        <button class="btn btn-outline">上一步</button>
+        <button class="btn btn-primary">下一步</button>
+      </div>
+    </main>
     <footer>
       <div class="container">
         <div class="footer-logo"></div>
