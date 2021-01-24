@@ -988,7 +988,7 @@ main .container .car-container .car-item .item-amount .plus {
   display: inline-block;
   height: 26px;
   width: 26px;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 22px;
   text-align: center;
   border-radius: 50%;
@@ -1018,6 +1018,7 @@ main .container .control-panel .btn {
   padding: 15px 40px;
   height: 40px;
   line-height: 10px;
+  cursor: pointer;
 }
 main .container .control-panel .btn-primary {
   color: var(--white);
@@ -1081,8 +1082,8 @@ footer {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 6fr 1fr 5fr;
-    grid-template-rows: repeat(4, auto);
-    grid-template-areas: "main-title . ." "stepper . car" "form . car" "btn . car";
+    grid-template-rows: auto 1fr 6fr auto;
+    grid-template-areas: "main-title . ." "stepper . car" "form . car" "btn . .";
   }
   main .container .main-title {
     grid-area: main-title;
@@ -1110,14 +1111,11 @@ footer {
   main .container .form-container {
     grid-area: form;
   }
-  main .container .form-container h3 {
-    margin-top: 40px;
-  }
   main .container .form-container .part:first-child {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, auto);
-    grid-template-areas: "title . . . . ." "gender-name gender-name gender-name gender-name gender-name gender-name" "phone phone phone email email email" "city city address address address address";
+    grid-template-areas: "title title . . . ." "gender-name gender-name gender-name gender-name gender-name gender-name" "phone phone phone email email email" "city city address address address address";
     grid-gap: 20px;
   }
   main .container .form-container .part:first-child h3 {
@@ -1147,14 +1145,15 @@ footer {
   }
   main .container .car-container .car-content .car-item {
     display: grid;
-    grid-template-columns: auto 3fr 1fr;
+    grid-template-columns: 40% 3fr 1fr;
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas: "img item-name price" "img amount ." "img . .";
-    grid-gap: 30px;
-    padding: 30px;
+    grid-gap: 10px;
+    padding: 20px;
   }
   main .container .car-container .car-content .car-item img {
     grid-area: img;
+    width: 100%;
   }
   main .container .car-container .car-content .car-item .item-name {
     grid-area: item-name;
