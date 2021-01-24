@@ -63,16 +63,19 @@
         <h2 class="main-title">結帳</h2>
         <div class="stepper-container">
           <div class="stepper-content">
-            <div class="step d-flex justify-content-start">
+            <div class="step d-flex justify-content-start active">
               <div class="circle"></div>
-              <span class="line"></span>
+              <span class="step-txt">寄送地址</span>
             </div>
             <div class="step d-flex justify-content-center">
               <div class="circle"></div>
+              <span class="step-txt">運送方式</span>
               <span class="line"></span>
             </div>
             <div class="step d-flex justify-content-end">
               <div class="circle"></div>
+              <span class="step-txt">付款資訊</span>
+              <span class="line"></span>
             </div>
           </div>
         </div>
@@ -81,8 +84,8 @@
             <div class="form-content">
               <div class="part">
                 <h3>寄送地址</h3>
-                <div class="d-flex justify-content-between">
-                  <div class="row mr-8">
+                <div class="d-flex justify-content-between gender-name">
+                  <div class="row mr-6">
                     <label for="">稱謂</label>
                     <div class="select-wrapper">
                       <select name="" id="">
@@ -96,16 +99,15 @@
                     <input type="text" placeholder="請輸入姓名" />
                   </div>
                 </div>
-
-                <div class="row">
+                <div class="row phone">
                   <label for="">電話</label>
                   <input type="text" placeholder="請輸入行動電話" />
                 </div>
-                <div class="row">
+                <div class="row email">
                   <label for="">Email</label>
                   <input type="text" placeholder="請輸入電子信箱" />
                 </div>
-                <div class="row">
+                <div class="row city">
                   <label for="">縣市</label>
                   <div class="select-wrapper">
                     <select name="" id="">
@@ -135,12 +137,12 @@
                     </select>
                   </div>
                 </div>
-                <div class="row">
+                <div class="row address">
                   <label for="">地址</label>
                   <input type="text" placeholder="請輸入地址" />
                 </div>
               </div>
-              <div class="part">
+              <div class="part d-none">
                 <h3>運送方式</h3>
                 <div class="deliver">
                   <input type="radio" name="delivery" />
@@ -157,7 +159,7 @@
                   <label for="" class="deliver-fee">$500</label>
                 </div>
               </div>
-              <div class="part">
+              <div class="part d-none">
                 <h3>付款資訊</h3>
                 <div class="row">
                   <label for="">持卡人姓名</label>
@@ -183,6 +185,7 @@
         </div>
         <div class="car-container">
           <div class="car-content">
+            <h3>購物籃</h3>
             <div class="car-item">
               <img src="./item1.png" alt="" />
               <div class="item-name">破壞補丁修身牛仔褲</div>
