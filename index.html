@@ -18,70 +18,71 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <div class="navbar-brand"></div>
-        <div class="navbar-toggle-label">
+      <div class="header__container">
+        <div class="navbar__brand"></div>
+        <div class="navbar__label--toggle">
           <label for="nav-control">
-            <div class="control-icon"></div>
+            <div class="label--icon"></div>
           </label>
         </div>
-        <input type="checkbox" id="nav-control" />
+        <input type="checkbox" id="nav-control" class="navbar__input" />
         <nav class="nav">
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a href="#" class="nav-link">男款</a>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#">男款</a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">女款</a>
+            <li class="nav__item">
+              <a href="#">女款</a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">最新消息</a>
+            <li class="nav__item">
+              <a href="#">最新消息</a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">聯絡我們</a>
+            <li class="nav__item">
+              <a href="#">聯絡我們</a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">客製商品</a>
+            <li class="nav__item">
+              <a href="#">客製商品</a>
             </li>
           </ul>
-          <div class="nav-item-right-part">
-            <a href="#" class="nav-link">
-              <div class="search"></div>
+          <div class="nav__right">
+            <a href="#">
+              <div class="nav--search"></div>
             </a>
-            <a href="#" class="nav-link">
-              <div class="shopping-car"></div>
+            <a href="#">
+              <div class="nav--shopping-car"></div>
             </a>
-            <a href="#" class="nav-link">
-              <div class="mode-changer"></div>
-            </a>
+            <div class="nav--mode-changer">
+               <label class="mode__label" for="dark__mode__toggle"></label>
+               <input type="checkbox" class="mode__input" id="dark__mode__toggle" />
+            </div>
           </div>
         </nav>
       </div>
     </header>
     <main>
-      <div class="container">
-        <h2 class="main-title">結帳</h2>
-        <div id="step-control" class="stepper-container">
-          <div class="stepper-content">
+      <div class="main__container">
+        <h2 class="main__title">結帳</h2>
+        <div id="step-control" class="stepper__container">
+          <div class="stepper__content">
             <div class="step d-flex justify-content-start active">
-              <div class="circle"></div>
-              <span class="step-txt">寄送地址</span>
+              <div class="step--circle"></div>
+              <span class="step--txt">寄送地址</span>
             </div>
             <div class="step d-flex justify-content-center">
-              <div class="circle"></div>
-              <span class="step-txt">運送方式</span>
-              <span class="line"></span>
+              <div class="step--circle"></div>
+              <span class="step--txt">運送方式</span>
+              <span class="step--line"></span>
             </div>
             <div class="step d-flex justify-content-end">
-              <div class="circle"></div>
-              <span class="step-txt">付款資訊</span>
-              <span class="line"></span>
+              <div class="step--circle"></div>
+              <span class="step--txt">付款資訊</span>
+              <span class="step--line"></span>
             </div>
           </div>
         </div>
-        <div class="form-container">
+        <div class="form__container">
           <form id="a-form">
-            <div class="form-content">
+            <div class="form__content">
               <div class="part">
                 <h3>寄送地址</h3>
                 <div class="d-flex justify-content-between gender-name">
@@ -146,17 +147,17 @@
                 <h3>運送方式</h3>
                 <div class="deliver">
                   <input type="radio" name="delivery" />
-                  <label for="" class="deliver-way">標準運送</label>
-                  <label for="" class="deliver-time">約3~7個工作天</label>
-                  <label for="" class="deliver-fee">免費</label>
+                  <label for="" class="deliver--way">標準運送</label>
+                  <label for="" class="deliver--time">約3~7個工作天</label>
+                  <label for="" class="deliver--fee">免費</label>
                 </div>
                 <div class="deliver">
                   <input type="radio" name="delivery" />
-                  <label for="" class="deliver-way">
+                  <label for="" class="deliver--way">
                     <strong>DHL貨運</strong>
                   </label>
-                  <label for="" class="deliver-time">48小時內送達</label>
-                  <label for="" class="deliver-fee">$500</label>
+                  <label for="" class="deliver--time">48小時內送達</label>
+                  <label for="" class="deliver--fee">$500</label>
                 </div>
               </div>
               <div class="part d-none">
@@ -183,30 +184,30 @@
             </div>
           </form>
         </div>
-        <div class="car-container">
-          <div class="car-content">
+        <div class="car__container">
+          <div class="car__content">
             <h3>購物籃</h3>
-            <div class="car-item">
+            <div class="car__item">
               <img src="./item1.png" alt="" />
-              <div class="item-name">破壞補丁修身牛仔褲</div>
-              <div class="item-amount">
+              <div class="item--name">破壞補丁修身牛仔褲</div>
+              <div class="item--amount">
                 <span class="minus">-</span>
                 <span class="amount">1</span>
                 <span class="plus">+</span>
               </div>
-              <div class="item-price">
+              <div class="item--price">
                 <strong>$3,999</strong>
               </div>
             </div>
-            <div class="car-item">
+            <div class="car__item">
               <img src="./item2.png" alt="" />
-              <div class="item-name">刷色直筒牛仔褲</div>
-              <div class="item-amount">
+              <div class="item--name">刷色直筒牛仔褲</div>
+              <div class="item--amount">
                 <span class="minus">-</span>
                 <span class="amount">1</span>
                 <span class="plus">+</span>
               </div>
-              <div class="item-price">
+              <div class="item--price">
                 <strong>$1,299</strong>
             </div>
           </div>
@@ -224,37 +225,37 @@
             </div>
         </div>
       </div>
-      <div id="btn-control" class="control-panel d-flex justify-content-between">
+      <div id="btn-control" class="control__panel d-flex justify-content-between">
         <button class="btn btn-outline" disabled>上一步</button>
         <button class="btn btn-primary">下一步</button>
       </div>
     </main>
     <footer>
-      <div class="container">
-        <div class="footer-logo"></div>
-        <div class="service">
+      <div class="footer__container">
+        <div class="footer--logo"></div>
+        <div class="footer--service">
           <h4>客戶服務</h4>
           <a href="#">運送說明</a>
           <a href="#">退換貨相關</a>
           <a href="#">付款資訊</a>
           <a href="#">FAQ</a>
         </div>
-        <div class="about">
+        <div class="footer--about">
           <h4>關於我們</h4>
           <a href="#">品牌故事</a>
           <a href="#">媒體聯繫</a>
           <a href="#">Press kit</a>
         </div>
-        <div class="info">
+        <div class="footer--info">
           <h4>資訊</h4>
           <a href="#">隱私權政策</a>
           <a href="#">Cookie</a>
           <a href="#">GDPR</a>
         </div>
-        <div class="follow">
+        <div class="footer--follow">
           <h4>追蹤ALPHA Shop</h4>
           <a href="#">+886 02123-45678</a>
-          <div class="follow-media">
+          <div class="follow--media">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fas fa-phone-alt"></i></a>

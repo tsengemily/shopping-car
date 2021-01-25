@@ -13,6 +13,7 @@ body {
   height: 100%;
   font-weight: 400;
   font-family: "Noto Sans TC", "Nunito Sans", sans-serif;
+  background-color: var(--page-bgc);
 }
 
 a {
@@ -25,16 +26,57 @@ input {
 }
 
 :root {
-  --footer-bgc: #f6f7f8;
-  --black: #2a2a2a;
-  --gray: #808080;
-  --dark-gray: #4a4a4a;
-  --light-gray: #afb1bd;
-  --light-light-gray: #f0f0f5;
+  --page-bgc: #ffffff;
+  --step-circle-bgc-done: #333333;
+  --step-line-done: #000000;
+  --step-line-yet: #f0f0f5;
+  --footer-bgc: #e5e5e5;
+  --car-line: #f0f0f5;
+  --car-bgc: #ffffff;
+  --amount-btn: #f0f0f5;
+  --btn-line: #e6e6eb;
+  --main-txt: #2a2a2a;
+  --step-circle-txt-done: #ffffff;
+  --step-txt-yet: #afb1bd;
+  --form-label: #808080;
+  --input-border: #4a4a4a;
+  --input-hover: #000000;
+  --select-btn: #2a2a2a;
+  --deliver-time: #000000
+  --car-strong: #000000;
+  --footer-txt: #808080;
   --white: #ffffff;
   --pink: #f67599;
-  --logo-light: url(./logolight.png);
-  --moon: url(./moon.png);
+  --logo: url(./logolight.png);
+  --search: url(./search.png);
+  --shopping-car: url(./shoppingcar.png);
+  --mode-icon: url(./moon.png);
+}
+
+[data-theme=dark] {
+  --page-bgc: #121212;
+  --step-circle-done-bgc: #333333;
+  --step-line-done: #ffffff;
+  --step-line-yet: rgba(240, 240, 245, 0.4);
+  --footer-bgc: #333333;
+  --car-line: rgba(255, 255, 255, 0.2);
+  --car-bgc: #383838;
+  --amount-btn: #808080;
+  --btn-line: rgba(255, 255, 255, 0.2);
+  --main-txt: #ffffff;
+  --step-circle-done-txt: #ffffff;
+  --step-txt-yet: rgba(255, 255, 255, 0.4);
+  --form-label: rgba(255, 255, 255, 0.4);
+  --input-border: #5e5e5e;
+  --input-hover: #ffffff;
+  --deliver-time: rgba(255, 255, 255, 0.4);
+  --select-btn: #5e5e5e;
+  --car-strong: #ffffff;
+  --footer-txt: rgba(255, 255, 255, 0.6);
+  --logo: url(./logo-dark.png);
+  --search: url(./search-dark.png);
+  --shopping-car: url(./shopping-dark.png);
+  --mode-icon: url(./sun.png);
 }
 
 /*----------變數----------*/
@@ -611,25 +653,28 @@ input {
 }
 
 /*----------繼承----------*/
-header .container .nav .nav-item-right-part .search,
-header .container .nav .nav-item-right-part .shopping-car,
-header .container .nav .nav-item-right-part .mode-changer, header .container .navbar-toggle-label .control-icon, header .container .navbar-brand {
+header .header__container .nav .nav__right .nav--search,
+header .header__container .nav .nav__right .nav--shopping-car,
+header .header__container .nav .nav__right .nav--mode-changer, header .header__container .navbar__label--toggle .label--icon, header .header__container .navbar__brand {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-main .container .form-container input,
-main .container .form-container select {
-  border: 1px solid var(--dark-gray);
+main .main__container .form__container input,
+main .main__container .form__container select {
+  border: 1px solid var(--input-border);
   border-radius: 4px;
   font-size: 12px;
   padding: 12px;
+  color: var(--main-txt);
+  background-color: transparent;
+  cursor: pointer;
 }
-main .container .form-container input:hover,
-main .container .form-container select:hover, main .container .form-container input:focus,
-main .container .form-container select:focus {
-  border-color: var(--black);
+main .main__container .form__container input:hover,
+main .main__container .form__container select:hover, main .main__container .form__container input:focus,
+main .main__container .form__container select:focus {
+  border-color: var(--input-hover);
 }
 
 /*----------display----------*/
@@ -713,7 +758,8 @@ main .container .form-container select:focus {
   text-align: left;
 }
 
-header .container {
+/*--------star(phone)--------*/
+header .header__container {
   position: fixed;
   top: 0;
   z-index: 99;
@@ -722,14 +768,14 @@ header .container {
   align-items: center;
   width: 100%;
   height: 56px;
-  background-color: var(--white);
+  background-color: var(--page-bgc);
 }
-header .container .navbar-brand {
+header .header__container .navbar__brand {
   width: 135px;
   height: 24px;
-  background-image: var(--logo-light);
+  background-image: var(--logo);
 }
-header .container .navbar-toggle-label .control-icon {
+header .header__container .navbar__label--toggle .label--icon {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -738,32 +784,32 @@ header .container .navbar-toggle-label .control-icon {
   background-image: url(./sort.png);
   cursor: pointer;
 }
-header .container #nav-control {
+header .header__container .navbar__input {
   position: absolute;
   opacity: 0;
 }
-header .container #nav-control:checked ~ .nav {
+header .header__container .navbar__input:checked ~ .nav {
   transform: scale(1, 1);
 }
-header .container #nav-control:checked ~ .nav .nav-item, header .container #nav-control:checked ~ .nav .nav-item-right-part {
+header .header__container .navbar__input:checked ~ .nav .nav__item, header .header__container .navbar__input:checked ~ .nav .nav__right {
   opacity: 1;
   transition: opacity 0.2s ease-out 0.15s;
 }
-header .container .nav {
+header .header__container .nav {
   transform: scale(1, 0);
   transform-origin: top;
   transition: transform 0.3s ease-out;
   position: absolute;
   top: 100%;
   width: 100%;
-  background-color: var(--white);
+  background-color: var(--page-bgc);
 }
-header .container .nav .nav-list {
+header .header__container .nav .nav__list {
   width: 90%;
   margin: 0 auto;
   text-align: center;
 }
-header .container .nav .nav-list .nav-item {
+header .header__container .nav .nav__list .nav__item {
   padding: 24px 0;
   line-height: 24px;
   font-size: 16px;
@@ -771,158 +817,183 @@ header .container .nav .nav-list .nav-item {
   opacity: 0;
   border-bottom: 1px solid rgba(42, 42, 42, 0.1);
 }
-header .container .nav .nav-item-right-part {
+header .header__container .nav .nav__list .nav__item a {
+  color: var(--main-txt);
+}
+header .header__container .nav .nav__right {
   display: flex;
   justify-content: center;
   padding: 24px 0;
-  line-height: 24px;
-  font-size: 16px;
-  font-weight: 500;
   opacity: 0;
 }
-header .container .nav .nav-item-right-part .search,
-header .container .nav .nav-item-right-part .shopping-car,
-header .container .nav .nav-item-right-part .mode-changer {
+header .header__container .nav .nav__right .nav--search,
+header .header__container .nav .nav__right .nav--shopping-car,
+header .header__container .nav .nav__right .nav--mode-changer {
   width: 21px;
   height: 21px;
 }
-header .container .nav .nav-item-right-part .search {
-  background-image: url(./search.png);
+header .header__container .nav .nav__right .nav--search {
+  background-image: var(--search);
   margin-right: 43px;
 }
-header .container .nav .nav-item-right-part .shopping-car {
-  background-image: url(./shoppingcar.png);
+header .header__container .nav .nav__right .nav--shopping-car {
+  background-image: var(--shopping-car);
   margin-right: 43px;
 }
-header .container .nav .nav-item-right-part .mode-changer {
-  background-image: var(--moon);
+header .header__container .nav .nav__right .nav--mode-changer {
+  background-image: var(--mode-icon);
+  cursor: pointer;
+}
+header .header__container .nav .nav__right .nav--mode-changer .mode__label {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+header .header__container .nav .nav__right .nav--mode-changer .mode__input {
+  display: none;
 }
 
-main .container {
+main .main__container {
   padding-top: 70px;
   margin: 0 20px;
 }
-main .container .main-title {
+main .main__container .main__title {
   font-weight: 700;
   font-size: 24px;
   line-height: 38px;
+  color: var(--main-txt);
 }
-main .container .stepper-container {
+main .main__container .stepper__container {
   margin: 24px 0;
   height: 40px;
   width: 100%;
 }
-main .container .stepper-container .stepper-content {
+main .main__container .stepper__container .stepper__content {
   display: flex;
 }
-main .container .stepper-container .stepper-content .step {
+main .main__container .stepper__container .stepper__content .step {
   position: relative;
   flex: 1;
   text-align: center;
 }
-main .container .stepper-container .stepper-content .step:nth-child(1) .circle::after {
+main .main__container .stepper__container .stepper__content .step:nth-child(1) .step--circle::after {
   content: "1";
-}
-main .container .stepper-container .stepper-content .step:nth-child(2) .circle::after {
-  content: "2";
-}
-main .container .stepper-container .stepper-content .step:nth-child(3) .circle::after {
-  content: "3";
-}
-main .container .stepper-container .stepper-content .step.checked .circle, main .container .stepper-container .stepper-content .step.active .circle {
-  border-color: var(--black);
-  background-color: var(--black);
-  color: var(--white);
-}
-main .container .stepper-container .stepper-content .step.checked .line, main .container .stepper-container .stepper-content .step.active .line {
-  background-color: var(--black);
-}
-main .container .stepper-container .stepper-content .step.checked .circle::after {
-  content: "✔";
-}
-main .container .stepper-container .stepper-content .step .circle {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1px solid var(--light-gray);
-  color: var(--light-gray);
+  color: var(--step-txt-yet);
   font-family: "Nunito Sans";
   font-weight: 700;
   font-size: 16px;
   line-height: 32px;
 }
-main .container .stepper-container .stepper-content .step:last-child .line {
-  right: 40%;
-  left: -20%;
+main .main__container .stepper__container .stepper__content .step:nth-child(2) .step--circle::after {
+  content: "2";
+  color: var(--step-txt-yet);
+  font-family: "Nunito Sans";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px;
 }
-main .container .stepper-container .stepper-content .step:nth-child(2) .line {
-  right: 80%;
-  left: -60%;
+main .main__container .stepper__container .stepper__content .step:nth-child(3) .step--circle::after {
+  content: "3";
+  color: var(--step-txt-yet);
+  font-family: "Nunito Sans";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px;
 }
-main .container .stepper-container .stepper-content .step .step-txt {
+main .main__container .stepper__container .stepper__content .step .step--circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--step-txt-yet);
+}
+main .main__container .stepper__container .stepper__content .step .step--txt {
   display: none;
 }
-main .container .stepper-container .stepper-content .step .line {
+main .main__container .stepper__container .stepper__content .step .step--line {
   display: block;
   position: absolute;
   top: 16px;
   height: 2px;
-  background-color: var(--light-gray);
+  background-color: var(--step-line-yet);
 }
-main .container .form-container h3 {
+main .main__container .stepper__container .stepper__content .step:last-child .step--line {
+  right: 40%;
+  left: -20%;
+}
+main .main__container .stepper__container .stepper__content .step:nth-child(2) .step--line {
+  right: 80%;
+  left: -60%;
+}
+main .main__container .stepper__container .stepper__content .step.active .step--circle, main .main__container .stepper__container .stepper__content .step.checked .step--circle {
+  border-color: var(--step-circle-bgc-done);
+  background-color: var(--step-circle-bgc-done);
+  color: var(--step-circle-txt-done);
+}
+main .main__container .stepper__container .stepper__content .step.active .step--line, main .main__container .stepper__container .stepper__content .step.checked .step--line {
+  background-color: var(--step-line-done);
+}
+main .main__container .stepper__container .stepper__content .step.active .step--circle::after {
+  color: var(--step-circle-txt-done);
+}
+main .main__container .stepper__container .stepper__content .step.checked .step--circle::after {
+  content: "✔";
+  color: var(--step-circle-txt-done);
+}
+main .main__container .form__container h3 {
   margin-bottom: 24px;
   font-weight: 700;
   font-size: 24px;
   line-height: 24px;
+  color: var(--main-txt);
 }
-main .container .form-container .row {
+main .main__container .form__container .row {
   margin-bottom: 24px;
   width: 100%;
 }
-main .container .form-container .row > label {
+main .main__container .form__container .row > label {
   display: block;
   margin-bottom: 8px;
   font-weight: 700;
   font-size: 13px;
-  color: var(--gray);
+  color: var(--form-label);
 }
-main .container .form-container input,
-main .container .form-container select {
+main .main__container .form__container input,
+main .main__container .form__container select {
   width: 100%;
 }
-main .container .form-container select {
+main .main__container .form__container select {
   -webkit-appearance: none;
   background-color: transparent;
 }
-main .container .form-container .select-wrapper {
+main .main__container .form__container .select-wrapper {
   position: relative;
   z-index: 0;
 }
-main .container .form-container .select-wrapper::after {
+main .main__container .form__container .select-wrapper::after {
   content: "";
   position: absolute;
   z-index: -1;
   top: 50%;
   right: 15px;
-  border-top: 5px solid var(--black);
+  border-top: 5px solid var(--select-btn);
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
   transform: translateY(-50%);
 }
-main .container .form-container .deliver {
+main .main__container .form__container .deliver {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "radio way fee" "radio time .";
-  border: 1px solid var(--light-light-gray);
+  border: 1px solid var(--input-border);
   border-radius: 4px;
   margin-bottom: 24px;
   padding: 7px 20px;
 }
-main .container .form-container .deliver:hover, main .container .form-container .deliver:focus {
-  border-color: var(--black);
+main .main__container .form__container .deliver:hover, main .main__container .form__container .deliver:focus {
+  border-color: var(--input-hover);
 }
-main .container .form-container .deliver input {
+main .main__container .form__container .deliver input {
   grid-area: radio;
   position: relative;
   top: 25%;
@@ -932,59 +1003,65 @@ main .container .form-container .deliver input {
   height: 20px;
   width: 20px;
 }
-main .container .form-container .deliver input:checked {
-  box-shadow: inset 0 0 0 7px var(--black);
+main .main__container .form__container .deliver input:checked {
+  box-shadow: inset 0 0 0 7px var(--main-txt);
 }
-main .container .form-container .deliver .deliver-way {
+main .main__container .form__container .deliver .deliver--way {
   grid-area: way;
   font-size: 14px;
   line-height: 30px;
+  color: var(--step-line-done);
 }
-main .container .form-container .deliver .deliver-time {
+main .main__container .form__container .deliver .deliver--time {
   grid-area: time;
   font-size: 12px;
   line-height: 16px;
+  color: var(--deliver-time);
 }
-main .container .form-container .deliver .deliver-fee {
+main .main__container .form__container .deliver .deliver--fee {
   grid-area: fee;
   position: relative;
   top: 8px;
   font-size: 12px;
   line-height: 16px;
+  color: var(--step-line-done);
 }
-main .container .car-container {
-  border: 1px solid var(--light-light-gray);
+main .main__container .car__container {
+  border: 1px solid var(--car-line);
   border-radius: 8px;
   padding: 16px;
+  background-color: var(--car-bgc);
 }
-main .container .car-container h3 {
+main .main__container .car__container h3 {
   display: none;
 }
-main .container .car-container .car-item {
+main .main__container .car__container .car__item {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: auto 1fr;
   grid-template-areas: "img name" "img amount" "img price";
   margin-bottom: 18px;
 }
-main .container .car-container .car-item img {
+main .main__container .car__container .car__item img {
   grid-area: img;
 }
-main .container .car-container .car-item .item-name {
+main .main__container .car__container .car__item .item--name {
   grid-area: name;
   font-size: 16px;
   line-height: 24px;
   text-align: right;
+  color: var(--main-txt);
 }
-main .container .car-container .car-item .item-amount {
+main .main__container .car__container .car__item .item--amount {
   grid-area: amount;
   text-align: right;
 }
-main .container .car-container .car-item .item-amount .amount {
+main .main__container .car__container .car__item .item--amount .amount {
   margin: 0 25px;
+  color: var(--car-strong);
 }
-main .container .car-container .car-item .item-amount .minus,
-main .container .car-container .car-item .item-amount .plus {
+main .main__container .car__container .car__item .item--amount .minus,
+main .main__container .car__container .car__item .item--amount .plus {
   display: inline-block;
   height: 26px;
   width: 26px;
@@ -992,25 +1069,32 @@ main .container .car-container .car-item .item-amount .plus {
   line-height: 22px;
   text-align: center;
   border-radius: 50%;
-  background-color: var(--light-light-gray);
+  background-color: var(--amount-btn);
 }
-main .container .car-container .car-item .item-price {
+main .main__container .car__container .car__item .item--price {
   grid-area: price;
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
   text-align: right;
+  color: var(--car-strong);
 }
-main .container .car-container .row {
-  border-top: 1px solid var(--light-light-gray);
+main .main__container .car__container .row {
+  border-top: 1px solid var(--car-line);
   padding: 16px;
 }
-main .container .control-panel {
+main .main__container .car__container .row p:first-child {
+  color: var(--main-txt);
+}
+main .main__container .car__container .row p:last-child {
+  color: var(--car-strong);
+}
+main .main__container .control__panel {
   margin-top: 32px;
   padding: 24px 0 40px;
-  border-top: 1px solid var(--light-light-gray);
+  border-top: 1px solid var(--btn-line);
 }
-main .container .control-panel .btn {
+main .main__container .control__panel .btn {
   font-size: 14px;
   font-weight: 500;
   border: none;
@@ -1020,7 +1104,7 @@ main .container .control-panel .btn {
   line-height: 10px;
   cursor: pointer;
 }
-main .container .control-panel .btn-primary {
+main .main__container .control__panel .btn-primary {
   color: var(--white);
   background-color: var(--pink);
 }
@@ -1035,49 +1119,47 @@ footer {
     display: flex;
     justify-content: center;
   }
-  header .container {
+  header .header__container {
     position: relative;
     width: 85%;
     height: 60px;
   }
-  header .container .navbar-brand {
+  header .header__container .navbar__brand {
     position: absolute;
     width: 170px;
     height: 30px;
   }
-  header .container .navbar-toggle-label {
+  header .header__container .navbar__label--toggle {
     display: none;
   }
-  header .container .nav {
+  header .header__container .nav {
     all: unset;
   }
-  header .container .nav .nav-list {
+  header .header__container .nav .nav__list {
     display: flex;
     position: absolute;
     top: -5px;
     left: 0;
   }
-  header .container .nav .nav-list .nav-item {
+  header .header__container .nav .nav__list .nav__item {
     opacity: 1;
     border-bottom: none;
   }
-  header .container .nav .nav-list .nav-item:not(:last-child) {
+  header .header__container .nav .nav__list .nav__item:not(:last-child) {
     margin-right: 32px;
   }
-  header .container .nav .nav-item-right-part {
+  header .header__container .nav .nav__right {
     position: absolute;
     top: -1px;
     right: 0;
     opacity: 1;
   }
-  header .container .nav .nav-item-right-part .search {
-    margin-right: 32px;
-  }
-  header .container .nav .nav-item-right-part .shopping-car {
+  header .header__container .nav .nav__right .nav--search,
+header .header__container .nav .nav__right .nav--shopping-car {
     margin-right: 32px;
   }
 
-  main .container {
+  main .main__container {
     width: 85%;
     margin: 0 auto;
     display: grid;
@@ -1085,65 +1167,66 @@ footer {
     grid-template-rows: auto 1fr 6fr auto;
     grid-template-areas: "main-title . ." "stepper . car" "form . car" "btn . .";
   }
-  main .container .main-title {
+  main .main__container .main__title {
     grid-area: main-title;
   }
-  main .container .stepper-container {
+  main .main__container .stepper__container {
     grid-area: stepper;
   }
-  main .container .stepper-container .stepper-content .step.checked .step-txt, main .container .stepper-container .stepper-content .step.active .step-txt {
-    color: var(--black);
-  }
-  main .container .stepper-container .stepper-content .step .step-txt {
+  main .main__container .stepper__container .stepper__content .step .step--txt {
     display: inline-block;
     margin-left: 10px;
     padding-top: 3px;
-    color: var(--light-gray);
+    color: var(--step-txt-yet);
   }
-  main .container .stepper-container .stepper-content .step:last-child .line {
+  main .main__container .stepper__container .stepper__content .step:last-child .step--line {
     right: 70%;
     left: -10%;
   }
-  main .container .stepper-container .stepper-content .step:nth-child(2) .line {
+  main .main__container .stepper__container .stepper__content .step:nth-child(2) .step--line {
     right: 90%;
     left: -30%;
   }
-  main .container .form-container {
+  main .main__container .stepper__container .stepper__content .step.active .step--txt, main .main__container .stepper__container .stepper__content .step.checked .step--txt {
+    color: var(--main-txt);
+  }
+  main .main__container .form__container {
     grid-area: form;
   }
-  main .container .form-container .part:first-child {
+  main .main__container .form__container .part:first-child {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, auto);
     grid-template-areas: "title title . . . ." "gender-name gender-name gender-name gender-name gender-name gender-name" "phone phone phone email email email" "city city address address address address";
     grid-gap: 20px;
   }
-  main .container .form-container .part:first-child h3 {
+  main .main__container .form__container .part:first-child h3 {
     grid-area: title;
   }
-  main .container .form-container .part:first-child .gender-name {
+  main .main__container .form__container .part:first-child .gender-name {
     grid-area: gender-name;
   }
-  main .container .form-container .part:first-child .row.phone {
+  main .main__container .form__container .part:first-child .row.phone {
     grid-area: phone;
   }
-  main .container .form-container .part:first-child .row.email {
+  main .main__container .form__container .part:first-child .row.email {
     grid-area: email;
   }
-  main .container .form-container .part:first-child .row.city {
+  main .main__container .form__container .part:first-child .row.city {
     grid-area: city;
   }
-  main .container .form-container .part:first-child .row.address {
+  main .main__container .form__container .part:first-child .row.address {
     grid-area: address;
   }
-  main .container .car-container {
+  main .main__container .car__container {
     grid-area: car;
   }
-  main .container .car-container .car-content h3 {
+  main .main__container .car__container .car__content h3 {
     display: block;
     padding: 24px 32px;
+    color: var(--main-txt);
   }
-  main .container .car-container .car-content .car-item {
+  main .main__container .car__container .car__content .car__item {
     display: grid;
     grid-template-columns: 40% 3fr 1fr;
     grid-template-rows: repeat(3, 1fr);
@@ -1151,22 +1234,22 @@ footer {
     grid-gap: 10px;
     padding: 20px;
   }
-  main .container .car-container .car-content .car-item img {
+  main .main__container .car__container .car__content .car__item img {
     grid-area: img;
     width: 100%;
   }
-  main .container .car-container .car-content .car-item .item-name {
+  main .main__container .car__container .car__content .car__item .item--name {
     grid-area: item-name;
     text-align: left;
   }
-  main .container .car-container .car-content .car-item .item-amount {
+  main .main__container .car__container .car__content .car__item .item--amount {
     grid-area: amount;
     text-align: left;
   }
-  main .container .car-container .car-content .car-item .item-price {
+  main .main__container .car__container .car__content .car__item .item--price {
     grid-area: price;
   }
-  main .container .control-panel {
+  main .main__container .control__panel {
     grid-area: btn;
   }
 
@@ -1177,7 +1260,7 @@ footer {
     margin-top: 125px;
     background-color: var(--footer-bgc);
   }
-  footer .container {
+  footer .footer__container {
     width: 85%;
     margin: 0 auto;
     padding-top: 65px;
@@ -1186,47 +1269,47 @@ footer {
     grid-template-areas: "footer-logo service about info follow";
     grid-gap: 20px;
   }
-  footer .container h4 {
-    margin-bottom: 15px;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--black);
-  }
-  footer .container .footer-logo {
+  footer .footer__container .footer--logo {
     grid-area: footer-logo;
     width: 60%;
-    background-image: var(--logo-light);
+    background-image: var(--logo);
     background-position-y: 50%;
     background-size: contain;
     background-repeat: no-repeat;
   }
-  footer .container .service,
-footer .container .about,
-footer .container .info,
-footer .container .follow {
+  footer .footer__container h4 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--main-txt);
+  }
+  footer .footer__container .footer--service,
+footer .footer__container .footer--about,
+footer .footer__container .footer--info,
+footer .footer__container .footer--follow {
     display: flex;
     flex-direction: column;
   }
-  footer .container .service a,
-footer .container .about a,
-footer .container .info a,
-footer .container .follow a {
-    color: var(--gray);
+  footer .footer__container .footer--service a,
+footer .footer__container .footer--about a,
+footer .footer__container .footer--info a,
+footer .footer__container .footer--follow a {
+    color: var(--footer-txt);
     font-size: 16px;
   }
-  footer .container .service {
+  footer .footer__container .footer--service {
     grid-area: service;
   }
-  footer .container .about {
+  footer .footer__container .footer--about {
     grid-area: about;
   }
-  footer .container .info {
+  footer .footer__container .footer--info {
     grid-area: info;
   }
-  footer .container .follow {
+  footer .footer__container .footer--follow {
     grid-area: follow;
   }
-  footer .container .follow .follow-media a {
+  footer .footer__container .footer--follow .follow--media a {
     margin-right: 10px;
   }
 }
