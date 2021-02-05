@@ -211,7 +211,7 @@ $spacers: (
 }
 
 /*----------繼承----------*/
-%backgroung {
+%background {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -261,23 +261,27 @@ header {
       width: 135px;
       height: 24px;
       background-image: var(--logo);
-      @extend %backgroung;
+      @extend %background;
     }
     .navbar__label--toggle {
-      .label--icon {
         position: absolute;
         top: 15px;
         left: 15px;
+      .label--icon {
+        // position: absolute;
+        // top: 15px;
+        // left: 15px;
         width: 24px;
         height: 24px;
         background-image: url(./sort.png);
-        @extend %backgroung;
+        @extend %background;
         cursor: pointer;
       }
     }
     .navbar__input {
-      position: absolute;
-      opacity: 0;
+      // position: absolute;
+      // opacity: 0;
+      display: none;
       &:checked ~ .nav {
         transform: scale(1, 1);
       }
@@ -321,7 +325,7 @@ header {
         .nav--mode-changer {
           width: 21px;
           height: 21px;
-          @extend %backgroung;
+          @extend %background;
         }
         .nav--search {
           background-image: var(--search);
@@ -422,7 +426,12 @@ main {
         line-height: 24px;
         color: var(--main-txt);
       }
-      .row {
+      .part__row {
+        &.first {
+          display: flex;
+        }
+      }
+       .row {
         margin-bottom: 24px;
         width: 100%;
         > label {
@@ -431,6 +440,13 @@ main {
           font-weight: 700;
           font-size: 13px;
           color: var(--form-label);
+        }
+        &--salutation,
+        &--name {
+          width: 50% 
+        }
+        &--salutation {
+          margin-right: 20px; 
         }
       }
       input,
@@ -518,13 +534,14 @@ main {
       .car__item {
         display: grid;
         grid-template-rows: repeat(3, 1fr);
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 40% 1fr;
         grid-template-areas:
           'img name'
           'img amount'
           'img price';
         margin-bottom: 18px;
         img {
+          width: 100%;
           grid-area: img;
         }
         .item--name {
@@ -607,7 +624,7 @@ footer {
     .header__container {
       position: relative;
       width: 85%;
-      height: 60px;
+      height: 75px;
       .navbar__brand {
         position: absolute;
         width: 170px;
@@ -621,9 +638,12 @@ footer {
         .nav__list {
           display: flex;
           position: absolute;
-          top: -5px;
+          top: 0;
           left: 0;
+          width: auto;
+          white-space: nowrap;
           .nav__item {
+            display: inline-block;
             opacity: 1;
             border-bottom: none;
             &:not(:last-child) {
@@ -690,35 +710,24 @@ footer {
         grid-area: form;
         .part {
           &:first-child {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(4, auto);
-            grid-template-areas:
-              'title title . . . .'
-              'gender-name gender-name gender-name gender-name gender-name gender-name'
-              'phone phone phone email email email'
-              'city city address address address address';
-            grid-gap: 20px;
-            h3 {
-              grid-area: title;
-            }
-            .gender-name {
-              grid-area: gender-name;
-            }
-            .row {
-              &.phone {
-                grid-area: phone;
+           .part__row {
+              display: flex;
+              justify-content: space-between;
+              .row--salutation {
+                width: 40%;
               }
-              &.email {
-                grid-area: email;
+              .row--phone {
+                width: 40%;
+                margin-right: 20px;
               }
-              &.city {
-                grid-area: city;
+              .row--email {
+                width: 60%;
               }
-              &.address {
-                grid-area: address;
+              .row--city {
+                width: 40%;
+                margin-right: 20px;
               }
-            }
+           }
           }
         }
       }
@@ -822,3 +831,22 @@ footer {
     }
   }
 }
+
+// @media screen and (min-width: 1150px) {
+//    .nav {
+//         .nav__list {
+//           display: flex;
+//           position: absolute;
+//           top: 0;
+//           left: 0;
+//           .nav__item {
+//             opacity: 1;
+//             border-bottom: none;
+//             &:not(:last-child) {
+//               margin-right: 32px;
+//             }
+//           }
+//         }
+//       }
+
+// }

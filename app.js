@@ -58,3 +58,8 @@ const darkModeToggleHandler = (event) => {
 }
 // bind the event
 darkModeToggle.addEventListener('change', darkModeToggleHandler)
+
+//按下按鈕，跳回頁面上方
+$(nextBtn).click(function () {
+  $('div').scrollLeft(100)
+})
