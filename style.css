@@ -1081,6 +1081,7 @@ main .main__container .car__container .car__item .item--amount .plus {
   text-align: center;
   border-radius: 50%;
   background-color: var(--amount-btn);
+  cursor: pointer;
 }
 main .main__container .car__container .car__item .item--price {
   grid-area: price;

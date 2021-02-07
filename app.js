@@ -5,8 +5,23 @@ const steps = stepControl.querySelectorAll('.step')
 const btnControl = document.getElementById('btn-control')
 const nextBtn = btnControl.querySelector('.btn-primary')
 const prevBtn = btnControl.querySelector('.btn-outline')
-let step = 0
+const darkModeToggle = document.getElementById('dark__mode__toggle')
+const carTotalPanel = document.getElementById('car__total-panel')
+const carItemPanel = document.getElementById('car__item-panel')
 
+let step = 0
+let total = 5298
+let carItems = [
+  {
+    name: '破壞補丁修身牛仔褲',
+    price: 3999,
+    amount: 1,
+    picture: './item1.png',
+  },
+  { name: '刷色直筒牛仔褲', price: 1299, amount: 1, picture: './item2.png' },
+]
+
+//上下一步btn樣式 & step顯示
 function handleBtnControlClicked(e) {
   e.preventDefault()
   const nowStep = steps[step]
@@ -43,12 +58,7 @@ function setBtnDisabled() {
   }
 }
 
-btnControl.addEventListener('click', handleBtnControlClicked)
-
-// dark mode
-// target the switch element
-const darkModeToggle = document.getElementById('dark__mode__toggle')
-// toggle handler
+// 深色模式
 const darkModeToggleHandler = (event) => {
   if (event.target.checked) {
     document.documentElement.setAttribute('data-theme', 'dark')
@@ -56,10 +66,55 @@ const darkModeToggleHandler = (event) => {
     document.documentElement.setAttribute('data-theme', 'light')
   }
 }
-// bind the event
-darkModeToggle.addEventListener('change', darkModeToggleHandler)
 
-//按下按鈕，跳回頁面上方
-$(nextBtn).click(function () {
-  $('div').scrollLeft(100)
-})
+//載入car商品
+function displayCarItem(items) {
+  let html = ''
+  items.forEach((item) => {
+    html += `
+      <div class="car__item">
+              <img src=${item.picture} alt="" />
+              <div class="item--name">${item.name}</div>
+              <div class="item--amount">
+                <span class="minus">-</span>
+                <span class="amount">${item.amount}</span>
+                <span class="plus">+</span>
+              </div>
+              <div class="item--price">
+                <strong>${item.price}</strong>
+            </div>
+          </div>
+    `
+  })
+  carItemPanel.innerHTML = html
+}
+
+//身品數量 & 總計
+function carItemAmountAndTotalPrice(event) {
+  if (event.target.matches('.minus') || event.target.matches('.plus')) {
+    const amountBox = event.target.parentElement.children[1]
+    const itemPrice =
+      event.target.parentElement.parentElement.children[3].children[0]
+    let n = Number(amountBox.innerText)
+    let p = Number(itemPrice.innerText)
+    if (event.target.matches('.minus')) {
+      console.log(n)
+      if (n > 1) {
+        n -= 1
+        total -= p
+      }
+    } else {
+      n += 1
+      total += p
+    }
+    amountBox.innerText = n
+    carTotalPanel.innerText = '$ ' + new Intl.NumberFormat().format(total)
+  }
+}
+
+displayCarItem(carItems)
+carTotalPanel.innerHTML = '$ ' + new Intl.NumberFormat().format(total)
+
+btnControl.addEventListener('click', handleBtnControlClicked)
+darkModeToggle.addEventListener('change', darkModeToggleHandler)
+carItemPanel.addEventListener('click', carItemAmountAndTotalPrice)
