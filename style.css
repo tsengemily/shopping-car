@@ -1125,8 +1125,7 @@ header .header__container .nav__right .nav--mode-changer .mode__input {
   display: none;
 }
 
-/* ----------pc media query---------- */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 756px) and (max-width: 1100px) {
   header {
     display: flex;
     justify-content: center;
@@ -1163,6 +1162,9 @@ header .header__container .nav__right .nav--mode-changer .mode__input {
   header .header__container .nav__list .nav__item:not(:last-child) {
     margin-right: 32px;
   }
+  header .header__container .nav__list .nav__item:nth-child(3), header .header__container .nav__list .nav__item:nth-child(4) {
+    display: none;
+  }
   header .header__container .nav__right {
     position: absolute;
     top: -1px;
@@ -1173,7 +1175,9 @@ header .header__container .nav__right .nav--mode-changer .mode__input {
 header .header__container .nav__right .nav--shopping-car {
     margin-right: 32px;
   }
-
+}
+/* ----------pc media query---------- */
+@media screen and (min-width: 768px) {
   .main .main__container {
     width: 85%;
     margin: 0 auto;
@@ -1319,6 +1323,57 @@ header .header__container .nav__right .nav--shopping-car {
   }
   .footer__container .footer--follow .follow--media a {
     margin-right: 10px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  header {
+    display: flex;
+    justify-content: center;
+  }
+  header .header__container {
+    position: relative;
+    width: 85%;
+    height: 75px;
+  }
+  header .header__container .navbar__brand {
+    position: absolute;
+    width: 170px;
+    height: 30px;
+  }
+  header .header__container .navbar__label--toggle {
+    display: none;
+  }
+  header .header__container .nav {
+    all: unset;
+  }
+  header .header__container .nav__list {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    white-space: nowrap;
+  }
+  header .header__container .nav__list .nav__item {
+    display: inline-block;
+    opacity: 1;
+    border-bottom: none;
+  }
+  header .header__container .nav__list .nav__item:not(:last-child) {
+    margin-right: 32px;
+  }
+  header .header__container .nav__list .nav__item:nth-child(3), header .header__container .nav__list .nav__item:nth-child(4) {
+    display: block;
+  }
+  header .header__container .nav__right {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    opacity: 1;
+  }
+  header .header__container .nav__right .nav--search,
+header .header__container .nav__right .nav--shopping-car {
+    margin-right: 32px;
   }
 }
 

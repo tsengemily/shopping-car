@@ -617,9 +617,8 @@ header {
   display: none;
 }
 
-/* ----------pc media query---------- */
-@media screen and (min-width: 768px) {
-  header {
+@media screen and (min-width: 756px) and (max-width: 1100px) { 
+   header {
     display: flex;
     justify-content: center;
     .header__container {
@@ -650,6 +649,10 @@ header {
             &:not(:last-child) {
               margin-right: 32px;
             }
+            &:nth-child(3),
+            &:nth-child(4) {
+              display: none;
+            }
           }
         }
         &__right {
@@ -665,6 +668,62 @@ header {
       }
     }
   }
+}  
+
+
+
+/* ----------pc media query---------- */
+@media screen and (min-width: 768px) {
+  // header {
+  //   display: flex;
+  //   justify-content: center;
+  //   .header__container {
+  //     position: relative;
+  //     width: 85%;
+  //     height: 75px;
+  //     .navbar__brand {
+  //       position: absolute;
+  //       width: 170px;
+  //       height: 30px;
+  //     }
+  //     .navbar__label--toggle {
+  //       display: none;
+  //     }
+  //     .nav {
+  //       all: unset;
+  //       &__list {
+  //         display: flex;
+  //         position: absolute;
+  //         top: 0;
+  //         left: 0;
+  //         width: auto;
+  //         white-space: nowrap;
+  //         .nav__item {
+  //           display: inline-block;
+  //           opacity: 1;
+  //           border-bottom: none;
+  //           &:not(:last-child) {
+  //             margin-right: 32px;
+  //           }
+  //           // &:nth-child(3),
+  //           // &:nth-child(4) {
+  //           //   display: none;
+  //           // }
+  //         }
+  //       }
+  //       &__right {
+  //         position: absolute;
+  //         top: -1px;
+  //         right: 0;
+  //         opacity: 1;
+  //         .nav--search,
+  //         .nav--shopping-car {
+  //           margin-right: 32px;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
   .main {
     .main__container {
       width: 85%;
@@ -833,21 +892,57 @@ header {
   }
 }
 
-// @media screen and (min-width: 1150px) {
-//    .nav {
-//         .nav__list {
-//           display: flex;
-//           position: absolute;
-//           top: 0;
-//           left: 0;
-//           .nav__item {
-//             opacity: 1;
-//             border-bottom: none;
-//             &:not(:last-child) {
-//               margin-right: 32px;
-//             }
-//           }
-//         }
-//       }
 
-// }
+
+@media screen and (min-width: 1100px) { 
+ header {
+    display: flex;
+    justify-content: center;
+    .header__container {
+      position: relative;
+      width: 85%;
+      height: 75px;
+      .navbar__brand {
+        position: absolute;
+        width: 170px;
+        height: 30px;
+      }
+      .navbar__label--toggle {
+        display: none;
+      }
+      .nav {
+        all: unset;
+        &__list {
+          display: flex;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: auto;
+          white-space: nowrap;
+          .nav__item {
+            display: inline-block;
+            opacity: 1;
+            border-bottom: none;
+            &:not(:last-child) {
+              margin-right: 32px;
+            }
+            &:nth-child(3),
+            &:nth-child(4) {
+              display: block;
+            }
+          }
+        }
+        &__right {
+          position: absolute;
+          top: -1px;
+          right: 0;
+          opacity: 1;
+          .nav--search,
+          .nav--shopping-car {
+            margin-right: 32px;
+          }
+        }
+      }
+    }
+  }
+}  
