@@ -735,16 +735,16 @@ input, select {
 }
 
 /*----------繼承----------*/
-header .header__container .nav .nav__right .nav--search,
-header .header__container .nav .nav__right .nav--shopping-car,
-header .header__container .nav .nav__right .nav--mode-changer, header .header__container .navbar__label--toggle .label--icon, header .header__container .navbar__brand {
+header .header__container .nav__right .nav--search,
+header .header__container .nav__right .nav--shopping-car,
+header .header__container .nav__right .nav--mode-changer, header .header__container .navbar__label--toggle .label--icon, header .header__container .navbar__brand {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-main .main__container .form__container input,
-main .main__container .form__container select {
+.main__container .form__container input,
+.main__container .form__container select {
   border: 1px solid var(--input-border);
   border-radius: 4px;
   font-size: 12px;
@@ -752,9 +752,9 @@ main .main__container .form__container select {
   color: var(--main-txt);
   background-color: transparent;
 }
-main .main__container .form__container input:hover,
-main .main__container .form__container select:hover, main .main__container .form__container input:focus,
-main .main__container .form__container select:focus {
+.main__container .form__container input:hover,
+.main__container .form__container select:hover, .main__container .form__container input:focus,
+.main__container .form__container select:focus {
   border-color: var(--input-hover);
 }
 
@@ -805,12 +805,12 @@ header .header__container .nav {
   width: 100%;
   background-color: var(--page-bgc);
 }
-header .header__container .nav .nav__list {
+header .header__container .nav__list {
   width: 90%;
   margin: 0 auto;
   text-align: center;
 }
-header .header__container .nav .nav__list .nav__item {
+header .header__container .nav__list .nav__item {
   padding: 24px 0;
   line-height: 24px;
   font-size: 16px;
@@ -818,66 +818,66 @@ header .header__container .nav .nav__list .nav__item {
   opacity: 0;
   border-bottom: 1px solid rgba(42, 42, 42, 0.1);
 }
-header .header__container .nav .nav__list .nav__item a {
+header .header__container .nav__list .nav__item a {
   color: var(--main-txt);
 }
-header .header__container .nav .nav__right {
+header .header__container .nav__right {
   display: flex;
   justify-content: center;
   padding: 24px 0;
   opacity: 0;
 }
-header .header__container .nav .nav__right .nav--search,
-header .header__container .nav .nav__right .nav--shopping-car,
-header .header__container .nav .nav__right .nav--mode-changer {
+header .header__container .nav__right .nav--search,
+header .header__container .nav__right .nav--shopping-car,
+header .header__container .nav__right .nav--mode-changer {
   width: 21px;
   height: 21px;
 }
-header .header__container .nav .nav__right .nav--search {
+header .header__container .nav__right .nav--search {
   background-image: var(--search);
   margin-right: 43px;
 }
-header .header__container .nav .nav__right .nav--shopping-car {
+header .header__container .nav__right .nav--shopping-car {
   background-image: var(--shopping-car);
   margin-right: 43px;
 }
-header .header__container .nav .nav__right .nav--mode-changer {
+header .header__container .nav__right .nav--mode-changer {
   background-image: var(--mode-icon);
   cursor: pointer;
 }
-header .header__container .nav .nav__right .nav--mode-changer .mode__label {
+header .header__container .nav__right .nav--mode-changer .mode__label {
   display: inline-block;
   height: 100%;
   width: 100%;
 }
-header .header__container .nav .nav__right .nav--mode-changer .mode__input {
+header .header__container .nav__right .nav--mode-changer .mode__input {
   display: none;
 }
 
-main .main__container {
+.main__container {
   padding-top: 70px;
   margin: 0 20px;
 }
-main .main__container .main__title {
+.main__container .main__title {
   font-weight: 700;
   font-size: 24px;
   line-height: 38px;
   color: var(--main-txt);
 }
-main .main__container .stepper__container {
+.main__container .stepper__container {
   margin: 24px 0;
   height: 40px;
   width: 100%;
 }
-main .main__container .stepper__container .stepper__content {
+.main__container .stepper__container .stepper__content {
   display: flex;
 }
-main .main__container .stepper__container .stepper__content .step {
+.main__container .stepper__container .stepper__content .step {
   position: relative;
   flex: 1;
   text-align: center;
 }
-main .main__container .stepper__container .stepper__content .step:nth-child(1) .step--circle::after {
+.main__container .stepper__container .stepper__content .step:nth-child(1) .step--circle::after {
   content: "1";
   color: var(--step-txt-yet);
   font-family: "Nunito Sans";
@@ -885,7 +885,7 @@ main .main__container .stepper__container .stepper__content .step:nth-child(1) .
   font-size: 16px;
   line-height: 32px;
 }
-main .main__container .stepper__container .stepper__content .step:nth-child(2) .step--circle::after {
+.main__container .stepper__container .stepper__content .step:nth-child(2) .step--circle::after {
   content: "2";
   color: var(--step-txt-yet);
   font-family: "Nunito Sans";
@@ -893,7 +893,7 @@ main .main__container .stepper__container .stepper__content .step:nth-child(2) .
   font-size: 16px;
   line-height: 32px;
 }
-main .main__container .stepper__container .stepper__content .step:nth-child(3) .step--circle::after {
+.main__container .stepper__container .stepper__content .step:nth-child(3) .step--circle::after {
   content: "3";
   color: var(--step-txt-yet);
   font-family: "Nunito Sans";
@@ -901,85 +901,85 @@ main .main__container .stepper__container .stepper__content .step:nth-child(3) .
   font-size: 16px;
   line-height: 32px;
 }
-main .main__container .stepper__container .stepper__content .step .step--circle {
+.main__container .stepper__container .stepper__content .step--circle {
   width: 32px;
   height: 32px;
   border-radius: 50%;
   border: 1px solid var(--step-txt-yet);
 }
-main .main__container .stepper__container .stepper__content .step .step--txt {
+.main__container .stepper__container .stepper__content .step--txt {
   display: none;
 }
-main .main__container .stepper__container .stepper__content .step .step--line {
+.main__container .stepper__container .stepper__content .step--line {
   display: block;
   position: absolute;
   top: 16px;
   height: 2px;
   background-color: var(--step-line-yet);
 }
-main .main__container .stepper__container .stepper__content .step:last-child .step--line {
+.main__container .stepper__container .stepper__content .step:last-child .step--line {
   right: 40%;
   left: -20%;
 }
-main .main__container .stepper__container .stepper__content .step:nth-child(2) .step--line {
+.main__container .stepper__container .stepper__content .step:nth-child(2) .step--line {
   right: 80%;
   left: -60%;
 }
-main .main__container .stepper__container .stepper__content .step.active .step--circle, main .main__container .stepper__container .stepper__content .step.checked .step--circle {
+.main__container .stepper__container .stepper__content .step.active .step--circle, .main__container .stepper__container .stepper__content .step.checked .step--circle {
   border-color: var(--step-circle-bgc-done);
   background-color: var(--step-circle-bgc-done);
   color: var(--step-circle-txt-done);
 }
-main .main__container .stepper__container .stepper__content .step.active .step--line, main .main__container .stepper__container .stepper__content .step.checked .step--line {
+.main__container .stepper__container .stepper__content .step.active .step--line, .main__container .stepper__container .stepper__content .step.checked .step--line {
   background-color: var(--step-line-done);
 }
-main .main__container .stepper__container .stepper__content .step.active .step--circle::after {
+.main__container .stepper__container .stepper__content .step.active .step--circle::after {
   color: var(--step-circle-txt-done);
 }
-main .main__container .stepper__container .stepper__content .step.checked .step--circle::after {
+.main__container .stepper__container .stepper__content .step.checked .step--circle::after {
   content: "✔";
   color: var(--step-circle-txt-done);
 }
-main .main__container .form__container h3 {
+.main__container .form__container h3 {
   margin-bottom: 24px;
   font-weight: 700;
   font-size: 24px;
   line-height: 24px;
   color: var(--main-txt);
 }
-main .main__container .form__container .part__row.first {
+.main__container .form__container .part__row.first {
   display: flex;
 }
-main .main__container .form__container .row {
+.main__container .form__container .row {
   margin-bottom: 24px;
   width: 100%;
 }
-main .main__container .form__container .row > label {
+.main__container .form__container .row > label {
   display: block;
   margin-bottom: 8px;
   font-weight: 700;
   font-size: 13px;
   color: var(--form-label);
 }
-main .main__container .form__container .row--salutation, main .main__container .form__container .row--name {
+.main__container .form__container .row--salutation, .main__container .form__container .row--name {
   width: 50%;
 }
-main .main__container .form__container .row--salutation {
+.main__container .form__container .row--salutation {
   margin-right: 20px;
 }
-main .main__container .form__container input,
-main .main__container .form__container select {
+.main__container .form__container input,
+.main__container .form__container select {
   width: 100%;
 }
-main .main__container .form__container select {
+.main__container .form__container select {
   -webkit-appearance: none;
   background-color: transparent;
 }
-main .main__container .form__container .select-wrapper {
+.main__container .form__container .select-wrapper {
   position: relative;
   z-index: 0;
 }
-main .main__container .form__container .select-wrapper::after {
+.main__container .form__container .select-wrapper::after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -990,7 +990,7 @@ main .main__container .form__container .select-wrapper::after {
   border-left: 5px solid transparent;
   transform: translateY(-50%);
 }
-main .main__container .form__container .deliver {
+.main__container .form__container .deliver {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -1000,10 +1000,10 @@ main .main__container .form__container .deliver {
   margin-bottom: 24px;
   padding: 7px 20px;
 }
-main .main__container .form__container .deliver:hover, main .main__container .form__container .deliver:focus {
+.main__container .form__container .deliver:hover, .main__container .form__container .deliver:focus {
   border-color: var(--input-hover);
 }
-main .main__container .form__container .deliver input {
+.main__container .form__container .deliver input {
   grid-area: radio;
   position: relative;
   top: 25%;
@@ -1013,22 +1013,22 @@ main .main__container .form__container .deliver input {
   height: 20px;
   width: 20px;
 }
-main .main__container .form__container .deliver input:checked {
+.main__container .form__container .deliver input:checked {
   box-shadow: inset 0 0 0 7px var(--main-txt);
 }
-main .main__container .form__container .deliver .deliver--way {
+.main__container .form__container .deliver--way {
   grid-area: way;
   font-size: 14px;
   line-height: 30px;
   color: var(--step-line-done);
 }
-main .main__container .form__container .deliver .deliver--time {
+.main__container .form__container .deliver--time {
   grid-area: time;
   font-size: 12px;
   line-height: 16px;
   color: var(--deliver-time);
 }
-main .main__container .form__container .deliver .deliver--fee {
+.main__container .form__container .deliver--fee {
   grid-area: fee;
   position: relative;
   top: 8px;
@@ -1036,43 +1036,43 @@ main .main__container .form__container .deliver .deliver--fee {
   line-height: 16px;
   color: var(--step-line-done);
 }
-main .main__container .car__container {
+.main__container .car__container {
   border: 1px solid var(--car-line);
   border-radius: 8px;
   padding: 16px;
   background-color: var(--car-bgc);
 }
-main .main__container .car__container h3 {
+.main__container .car__container h3 {
   display: none;
 }
-main .main__container .car__container .car__item {
+.main__container .car__container .car__item {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: 40% 1fr;
   grid-template-areas: "img name" "img amount" "img price";
   margin-bottom: 18px;
 }
-main .main__container .car__container .car__item img {
+.main__container .car__container .car__item img {
   width: 100%;
   grid-area: img;
 }
-main .main__container .car__container .car__item .item--name {
+.main__container .car__container .car__item .item--name {
   grid-area: name;
   font-size: 16px;
   line-height: 24px;
   text-align: right;
   color: var(--main-txt);
 }
-main .main__container .car__container .car__item .item--amount {
+.main__container .car__container .car__item .item--amount {
   grid-area: amount;
   text-align: right;
 }
-main .main__container .car__container .car__item .item--amount .amount {
+.main__container .car__container .car__item .item--amount .amount {
   margin: 0 25px;
   color: var(--car-strong);
 }
-main .main__container .car__container .car__item .item--amount .minus,
-main .main__container .car__container .car__item .item--amount .plus {
+.main__container .car__container .car__item .item--amount .minus,
+.main__container .car__container .car__item .item--amount .plus {
   display: inline-block;
   height: 26px;
   width: 26px;
@@ -1083,7 +1083,7 @@ main .main__container .car__container .car__item .item--amount .plus {
   background-color: var(--amount-btn);
   cursor: pointer;
 }
-main .main__container .car__container .car__item .item--price {
+.main__container .car__container .car__item .item--price {
   grid-area: price;
   font-weight: 700;
   font-size: 16px;
@@ -1091,22 +1091,22 @@ main .main__container .car__container .car__item .item--price {
   text-align: right;
   color: var(--car-strong);
 }
-main .main__container .car__container .row {
+.main__container .car__container .row {
   border-top: 1px solid var(--car-line);
   padding: 16px;
 }
-main .main__container .car__container .row p:first-child {
+.main__container .car__container .row p:first-child {
   color: var(--main-txt);
 }
-main .main__container .car__container .row p:last-child {
+.main__container .car__container .row p:last-child {
   color: var(--car-strong);
 }
-main .main__container .control__panel {
+.main__container .control__panel {
   margin-top: 32px;
   padding: 24px 0 40px;
   border-top: 1px solid var(--btn-line);
 }
-main .main__container .control__panel .btn {
+.main__container .control__panel .btn {
   font-size: 14px;
   font-weight: 500;
   border: none;
@@ -1116,12 +1116,12 @@ main .main__container .control__panel .btn {
   line-height: 10px;
   cursor: pointer;
 }
-main .main__container .control__panel .btn-primary {
+.main__container .control__panel .btn-primary {
   color: var(--white);
   background-color: var(--pink);
 }
 
-footer {
+.footer {
   display: none;
 }
 
@@ -1147,7 +1147,7 @@ footer {
   header .header__container .nav {
     all: unset;
   }
-  header .header__container .nav .nav__list {
+  header .header__container .nav__list {
     display: flex;
     position: absolute;
     top: 0;
@@ -1155,26 +1155,26 @@ footer {
     width: auto;
     white-space: nowrap;
   }
-  header .header__container .nav .nav__list .nav__item {
+  header .header__container .nav__list .nav__item {
     display: inline-block;
     opacity: 1;
     border-bottom: none;
   }
-  header .header__container .nav .nav__list .nav__item:not(:last-child) {
+  header .header__container .nav__list .nav__item:not(:last-child) {
     margin-right: 32px;
   }
-  header .header__container .nav .nav__right {
+  header .header__container .nav__right {
     position: absolute;
     top: -1px;
     right: 0;
     opacity: 1;
   }
-  header .header__container .nav .nav__right .nav--search,
-header .header__container .nav .nav__right .nav--shopping-car {
+  header .header__container .nav__right .nav--search,
+header .header__container .nav__right .nav--shopping-car {
     margin-right: 32px;
   }
 
-  main .main__container {
+  .main .main__container {
     width: 85%;
     margin: 0 auto;
     display: grid;
@@ -1182,59 +1182,59 @@ header .header__container .nav .nav__right .nav--shopping-car {
     grid-template-rows: auto 1fr 6fr auto;
     grid-template-areas: "main-title . ." "stepper . car" "form . car" "btn . .";
   }
-  main .main__container .main__title {
+  .main .main__container .main__title {
     grid-area: main-title;
   }
-  main .main__container .stepper__container {
+  .main .main__container .stepper__container {
     grid-area: stepper;
   }
-  main .main__container .stepper__container .stepper__content .step .step--txt {
+  .main .main__container .stepper__container .stepper__content .step--txt {
     display: inline-block;
     margin-left: 10px;
     padding-top: 3px;
     color: var(--step-txt-yet);
   }
-  main .main__container .stepper__container .stepper__content .step:last-child .step--line {
+  .main .main__container .stepper__container .stepper__content .step:last-child .step--line {
     right: 70%;
     left: -10%;
   }
-  main .main__container .stepper__container .stepper__content .step:nth-child(2) .step--line {
+  .main .main__container .stepper__container .stepper__content .step:nth-child(2) .step--line {
     right: 90%;
     left: -30%;
   }
-  main .main__container .stepper__container .stepper__content .step.active .step--txt, main .main__container .stepper__container .stepper__content .step.checked .step--txt {
+  .main .main__container .stepper__container .stepper__content .step.active .step--txt, .main .main__container .stepper__container .stepper__content .step.checked .step--txt {
     color: var(--main-txt);
   }
-  main .main__container .form__container {
+  .main .main__container .form__container {
     grid-area: form;
   }
-  main .main__container .form__container .part:first-child .part__row {
+  .main .main__container .form__container .part:first-child .part__row {
     display: flex;
     justify-content: space-between;
   }
-  main .main__container .form__container .part:first-child .part__row .row--salutation {
+  .main .main__container .form__container .part:first-child .part__row .row--salutation {
     width: 40%;
   }
-  main .main__container .form__container .part:first-child .part__row .row--phone {
+  .main .main__container .form__container .part:first-child .part__row .row--phone {
     width: 40%;
     margin-right: 20px;
   }
-  main .main__container .form__container .part:first-child .part__row .row--email {
+  .main .main__container .form__container .part:first-child .part__row .row--email {
     width: 60%;
   }
-  main .main__container .form__container .part:first-child .part__row .row--city {
+  .main .main__container .form__container .part:first-child .part__row .row--city {
     width: 40%;
     margin-right: 20px;
   }
-  main .main__container .car__container {
+  .main .main__container .car__container {
     grid-area: car;
   }
-  main .main__container .car__container .car__content h3 {
+  .main .main__container .car__container .car__content h3 {
     display: block;
     padding: 24px 32px;
     color: var(--main-txt);
   }
-  main .main__container .car__container .car__content .car__item {
+  .main .main__container .car__container .car__content .car__item {
     display: grid;
     grid-template-columns: 40% 3fr 1fr;
     grid-template-rows: repeat(3, 1fr);
@@ -1242,33 +1242,33 @@ header .header__container .nav .nav__right .nav--shopping-car {
     grid-gap: 10px;
     padding: 20px;
   }
-  main .main__container .car__container .car__content .car__item img {
+  .main .main__container .car__container .car__content .car__item img {
     grid-area: img;
     width: 100%;
   }
-  main .main__container .car__container .car__content .car__item .item--name {
+  .main .main__container .car__container .car__content .car__item .item--name {
     grid-area: item-name;
     text-align: left;
   }
-  main .main__container .car__container .car__content .car__item .item--amount {
+  .main .main__container .car__container .car__content .car__item .item--amount {
     grid-area: amount;
     text-align: left;
   }
-  main .main__container .car__container .car__content .car__item .item--price {
+  .main .main__container .car__container .car__content .car__item .item--price {
     grid-area: price;
   }
-  main .main__container .control__panel {
+  .main .main__container .control__panel {
     grid-area: btn;
   }
 
-  footer {
+  .footer {
     display: block;
     width: 100%;
     height: 280px;
     margin-top: 125px;
     background-color: var(--footer-bgc);
   }
-  footer .footer__container {
+  .footer__container {
     width: 85%;
     margin: 0 auto;
     padding-top: 65px;
@@ -1277,7 +1277,7 @@ header .header__container .nav .nav__right .nav--shopping-car {
     grid-template-areas: "footer-logo service about info follow";
     grid-gap: 20px;
   }
-  footer .footer__container .footer--logo {
+  .footer__container .footer--logo {
     grid-area: footer-logo;
     width: 60%;
     background-image: var(--logo);
@@ -1285,39 +1285,39 @@ header .header__container .nav .nav__right .nav--shopping-car {
     background-size: contain;
     background-repeat: no-repeat;
   }
-  footer .footer__container h4 {
+  .footer__container h4 {
     margin-bottom: 15px;
     font-size: 24px;
     font-weight: 700;
     color: var(--main-txt);
   }
-  footer .footer__container .footer--service,
-footer .footer__container .footer--about,
-footer .footer__container .footer--info,
-footer .footer__container .footer--follow {
+  .footer__container .footer--service,
+.footer__container .footer--about,
+.footer__container .footer--info,
+.footer__container .footer--follow {
     display: flex;
     flex-direction: column;
   }
-  footer .footer__container .footer--service a,
-footer .footer__container .footer--about a,
-footer .footer__container .footer--info a,
-footer .footer__container .footer--follow a {
+  .footer__container .footer--service a,
+.footer__container .footer--about a,
+.footer__container .footer--info a,
+.footer__container .footer--follow a {
     color: var(--footer-txt);
     font-size: 16px;
   }
-  footer .footer__container .footer--service {
+  .footer__container .footer--service {
     grid-area: service;
   }
-  footer .footer__container .footer--about {
+  .footer__container .footer--about {
     grid-area: about;
   }
-  footer .footer__container .footer--info {
+  .footer__container .footer--info {
     grid-area: info;
   }
-  footer .footer__container .footer--follow {
+  .footer__container .footer--follow {
     grid-area: follow;
   }
-  footer .footer__container .footer--follow .follow--media a {
+  .footer__container .footer--follow .follow--media a {
     margin-right: 10px;
   }
 }

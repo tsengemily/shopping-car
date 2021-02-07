@@ -299,7 +299,7 @@ header {
       top: 100%;
       width: 100%;
       background-color: var(--page-bgc);
-      .nav__list {
+      &__list {
         width: 90%;
         margin: 0 auto;
         text-align: center;
@@ -315,7 +315,7 @@ header {
           }
         }
       }
-      .nav__right {
+      &__right {
         display: flex;
         justify-content: center;
         padding: 24px 0;
@@ -352,8 +352,8 @@ header {
   }
 }
 
-main {
-  .main__container {
+.main {
+  &__container {
     padding-top: 70px;
     margin: 0 20px;
     .main__title {
@@ -373,16 +373,16 @@ main {
           flex: 1;
           text-align: center;
           @include getStepNums(3);
-          .step--circle {
+          &--circle {
             width: 32px;
             height: 32px;
             border-radius: 50%;
             border: 1px solid var(--step-txt-yet);
           }
-          .step--txt {
+          &--txt {
             display: none;
           }
-          .step--line {
+          &--line {
             display: block;
             position: absolute;
             top: 16px;
@@ -501,19 +501,19 @@ main {
             box-shadow: inset 0 0 0 7px var(--main-txt);
           }
         }
-        .deliver--way {
+        &--way {
           grid-area: way;
           font-size: 14px;
           line-height: 30px;
           color: var(--step-line-done);
         }
-        .deliver--time {
+        &--time {
           grid-area: time;
           font-size: 12px;
           line-height: 16px;
           color: var(--deliver-time);
         }
-        .deliver--fee {
+        &--fee {
           grid-area: fee;
           position: relative;
           top: 8px;
@@ -613,7 +613,7 @@ main {
   }
 }
 
-footer {
+.footer {
   display: none;
 }
 
@@ -636,7 +636,7 @@ footer {
       }
       .nav {
         all: unset;
-        .nav__list {
+        &__list {
           display: flex;
           position: absolute;
           top: 0;
@@ -652,7 +652,7 @@ footer {
             }
           }
         }
-        .nav__right {
+        &__right {
           position: absolute;
           top: -1px;
           right: 0;
@@ -665,7 +665,7 @@ footer {
       }
     }
   }
-  main {
+  .main {
     .main__container {
       width: 85%;
       margin: 0 auto;
@@ -684,7 +684,7 @@ footer {
         grid-area: stepper;
         .stepper__content {
           .step {
-            .step--txt {
+            &--txt {
               display: inline-block;
               margin-left: 10px;
               padding-top: 3px;
@@ -773,13 +773,13 @@ footer {
       }
     }
   }
-  footer {
+  .footer {
     display: block;
     width: 100%;
     height: 280px;
     margin-top: 125px;
     background-color: var(--footer-bgc);
-    .footer__container {
+    &__container {
       width: 85%;
       margin: 0 auto;
       padding-top: 65px;
